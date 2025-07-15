@@ -29,7 +29,7 @@ A medical chatbot that can answer questions based on medical documents using Lan
    python create_memory.py
    
    # Then run the chat interface
-   python connect_memory.py
+   python retriever.py
    ```
 
 ## Project Structure
