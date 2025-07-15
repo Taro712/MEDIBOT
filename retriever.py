@@ -40,14 +40,11 @@ st.write("This is a simple app to search through medical documents.")
 query = st.text_input("Enter your query here:")
 if query:
     docs = output_documents(query)
-    for i, doc in enumerate(docs):
-        print("---RETRIEVED DOCUMENT---")
-        st.subheader(f"Document {i+1}")
-        st.write(doc)
-
-    if not query:
-        docs = ["Please enter a query to search for documents."]
-    print(docs)
+    if docs:
+        for i, doc in enumerate(docs):
+            st.subheader(f"Document {i+1}")
+            st.write(doc)
+    else:
+        st.warning("No documents found for the given query.")
 else:
-    docs = ["No documents found for the given query."]
-    print(docs)
+    st.info("Please enter a query to search for documents.")
